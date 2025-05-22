@@ -1,17 +1,19 @@
-name: Email Step Test
+name: Workflow with Email Identifier
 
 on:
+  # Runs when manually triggered
+  workflow_dispatch:
+  # Also runs on push to main branch
   push:
-    branches:
-      - main  # or 'master' depending on your default branch
+    branches: [ main ]
 
 jobs:
-  test:
+  hello-world:
     runs-on: ubuntu-latest
-
+    
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
       - name: 22f3002871@ds.study.iitm.ac.in
         run: echo "Hello, world!"
+        
+      - name: Display date
+        run: date
